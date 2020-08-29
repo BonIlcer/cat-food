@@ -1,0 +1,7 @@
+.App {
+  text-align: center;
+  background-image: url(/public/bg.jpg);
+}
+h1 {
+  font-family: "Exo 2";
+}
