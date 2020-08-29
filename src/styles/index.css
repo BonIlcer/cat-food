@@ -8,7 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(../img/bg.jpg);
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 p {
