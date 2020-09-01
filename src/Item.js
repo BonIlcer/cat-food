@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./styles/Item.css";
 import catImg from "./img/cat.jpg";
 
-const colorGrey = "rgb(159, 159, 159)";
-
 function Item({
   topText,
   flavorName,
@@ -13,26 +11,66 @@ function Item({
   weight,
   bottomText,
 }) {
-  const [isActive, setState] = useState(false);
+  const colorGrey = "#999999";
+  const colorSelectedHover = "#d91667";
+  const [selection, setSelection] = useState(false);
+  const [hoverMode, setHoverMode] = useState(false);
 
-  function toggleItem() {
-    setState(!isActive);
+  const defaultBottomText = (
+    <>
+      <p>
+        Чего сидишь? Порадуй котэ,{" "}
+        <a href="#" style={{ textDecoration: "none", borderBottom: "dashed" }}>
+          купи
+        </a>
+      </p>
+    </>
+  );
+
+  function toggleSelection() {
+    setSelection(!selection);
+  }
+
+  function leaveHover() {
+    setHoverMode(true);
+    console.log("onMouseLeave event");
+  }
+
+  function enterHover() {
+    setHoverMode(false);
+    console.log("onMouseLeave event");
+  }
+
+  function predicateClassname(className, selectName, hoverName) {
+    const classes = [className];
+    if (selection) classes.push(selectName);
+    if (hoverMode) classes.push(hoverName);
+
+    return classes.join(" ");
   }
 
   return (
     <div className="Item-Wrapper">
       <div
-        className={isActive ? "Item-Border Activated" : "Item-Border"}
-        onClick={toggleItem}
+        className={predicateClassname("Item-Border", "Selected", "Hover")}
+        onClick={toggleSelection}
+        onMouseLeave={leaveHover}
+        onMouseEnter={enterHover}
       >
         <div className="Item">
           <img src={catImg} alt="cat" />
-          <p style={{ color: colorGrey, fontSize: "12pt" }}>
-            {topText}Сказочное заморское яство
+          <p
+            style={
+              hoverMode && selection
+                ? { color: colorSelectedHover }
+                : { color: colorGrey }
+            }
+          >
+            {hoverMode && selection ? "Котэ не одобряет?" : topText}
           </p>
           <p style={{ fontWeight: "1000", fontSize: "38pt" }}>Нямушка</p>
           <p style={{ fontWeight: "1000", fontSize: "18pt", marginTop: "0px" }}>
-            {flavorName}с фуа гра
+            {flavorName}
           </p>
           <p
             style={{
@@ -41,7 +79,7 @@ function Item({
               marginTop: "30px",
             }}
           >
-            <span style={{ fontWeight: "1000" }}>{itemQty}10 </span>
+            <span style={{ fontWeight: "1000" }}>{itemQty} </span>
             порций
           </p>
           <p
@@ -51,22 +89,26 @@ function Item({
               marginTop: "0px",
             }}
           >
-            <span style={{ fontWeight: "1000" }}>{giftQty}2 </span>
-            {giftText}мыши в подарок
+            <span style={{ fontWeight: "1000" }}>{giftQty} </span>
+            {giftText}
           </p>
-          <div className={isActive ? "circle CActivated" : "circle"}>
-            <p style={{ fontSize: "28pt" }}>{weight}0,5 </p>
+          <div className={predicateClassname("circle", "CSelected", "CHover")}>
+            <p style={{ fontSize: "28pt" }}>{weight}</p>
             <p>кг</p>
           </div>
         </div>
       </div>
 
-      <div style={{ marginTop: "20px", fontWeight: "600" }}>
-        Чего сидишь? Порадуй котэ,{" "}
-        <a href="#" style={{ textDecoration: "none", borderBottom: "dashed" }}>
-          купи
-        </a>
-        {bottomText}
+      <div
+        style={{
+          margin: "20px 0 20px 0",
+          fontWeight: "500",
+          fontSize: "12pt",
+          width: "320px",
+          height: "45px",
+        }}
+      >
+        {selection ? bottomText : defaultBottomText}
       </div>
     </div>
   );

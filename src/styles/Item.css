@@ -1,7 +1,7 @@
 .Item {
   margin: 4px;
-  width: 312px;
-  height: 472px;
+  width: 310px;
+  height: 470px;
   overflow: hidden;
   background: white;
   background: linear-gradient(135deg, transparent 35px, white 0);
@@ -22,9 +22,23 @@
   border-radius: 10px;
 }
 
-.Activated {
+.Selected {
   background: #e62e7a;
   background: linear-gradient(135deg, transparent 35px, #e62e7a 0);
+}
+
+.Selected.Hover {
+  background: #d91667;
+  background: linear-gradient(135deg, transparent 35px, #d91667 0);
+}
+
+.Hover {
+  background: #2ea8e6;
+  background: linear-gradient(135deg, transparent 35px, #2ea8e6 0);
+}
+
+.Item-Wrapper {
+  min-width: 320px;
 }
 
 .Item img {
@@ -57,8 +71,16 @@
   justify-content: center;
 }
 
-.CActivated {
+.CSelected {
   background: #e62e7a;
+}
+
+.CSelected.CHover {
+  background: #d91667;
+}
+
+.CHover {
+  background: #2ea8e6;
 }
 
 .circle p {

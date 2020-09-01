@@ -1,0 +1,39 @@
+.Disabled {
+  margin: 4px;
+  width: 310px;
+  height: 470px;
+  overflow: hidden;
+  background: white;
+  background: linear-gradient(135deg, transparent 35px, white 0);
+  position: relative;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.BDisabled {
+  padding: 1px;
+  width: 320px;
+  height: 480px;
+  background: #b3b3b3;
+  background: linear-gradient(135deg, transparent 35px, #b3b3b3 0);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.Item.Disabled img {
+  opacity: 0.5;
+}
+
+.Item.Disabled p {
+  opacity: 0.5;
+}
+
+.CDisabled {
+  background: #b3b3b3;
+}
+
+.circle.CDisabled p {
+  opacity: 1;
+}
