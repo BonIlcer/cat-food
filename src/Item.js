@@ -20,9 +20,15 @@ function Item({
     <>
       <p>
         Чего сидишь? Порадуй котэ,{" "}
-        <a href="#" style={{ textDecoration: "none", borderBottom: "dashed" }}>
+        <span
+          style={{
+            textDecoration: "none",
+            borderBottom: "dashed",
+            color: "#0000EE",
+          }}
+        >
           купи
-        </a>
+        </span>
       </p>
     </>
   );
