@@ -24,7 +24,7 @@ function Item({
           style={{
             textDecoration: "none",
             borderBottom: "dashed",
-            color: "#0000EE",
+            color: "#1698d9",
           }}
         >
           купи
