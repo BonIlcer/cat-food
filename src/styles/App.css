@@ -12,19 +12,13 @@
 }
 
 .Items {
-  display: "flex";
-  justify-content: "space-evenly";
-  flex-wrap: "wrap";
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 h1 {
   margin: 20px 5px 20px 5px;
   font-family: "Exo 2";
-}
-
-_:-ms-fullscreen,
-:root .Items {
-  display: "flex";
-  justify-content: "space-around";
-  flex-wrap: "wrap";
 }
