@@ -14,8 +14,14 @@
 .Items {
   display: -ms-flexbox;
   display: flex;
+
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+_:-ms-lang(x),
+.ie10up .Items {
+  justify-content: space-around;
 }
 
 h1 {
