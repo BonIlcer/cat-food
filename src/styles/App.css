@@ -19,8 +19,8 @@
   flex-wrap: wrap;
 }
 
-_:-ms-lang(x),
-.ie10up .Items {
+_:-ms-fullscreen,
+:root .Items {
   justify-content: space-around;
 }
 
