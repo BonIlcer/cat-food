@@ -47,6 +47,11 @@
   margin: 220px 0 0 -180px;
 }
 
+_:-ms-fullscreen,
+:root .Item img {
+  margin: 220px 0 0 -40px;
+}
+
 .Item p {
   font-family: "Trebuchet MS";
   color: black;
